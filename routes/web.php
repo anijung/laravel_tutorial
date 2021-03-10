@@ -11,32 +11,32 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//
-//Route::auth();
-//Route::get('/tasks', 'TaskController@index');
-//Route::post('/task', 'TaskController@store');
-//Route::delete('/task/{task}', 'TaskController@destroy');
-//
-//Route::post('/task/create', 'TaskController@createView');
-//
-//Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-Route::group(['middleware' => ['web']], function () {
-
-    Route::get('/', function () {
-        return view('welcome');
-    })->middleware('guest');
-
-    Route::get('/tasks', 'TaskController@index');
-    Route::post('/task/create', 'TaskController@create');
-    Route::post('/task', 'TaskController@store');
-    Route::delete('/task/{task}', 'TaskController@destroy');
-
-    Route::auth();
-
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::auth();
+Route::get('/tasks', 'TaskController@index');
+Route::post('/task', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
+
+Route::post('/task/create', 'TaskController@create');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+//Route::group(['middleware' => ['web']], function () {
+//
+//    Route::get('/', function () {
+//        return view('welcome');
+//    })->middleware('guest');
+//
+//    Route::get('/tasks', 'TaskController@index');
+//    Route::post('/task/create', 'TaskController@create');
+//    Route::post('/task', 'TaskController@store');
+//    Route::delete('/task/{task}', 'TaskController@destroy');
+//
+//    Route::auth();
+//
+//});
